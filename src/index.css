@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+    
+  .base-button {
+    @apply  py-2 px-2 w-[80px] text-[16px] rounded-3xl;
+  }
+
+  .nav-list>li{
+    @apply size-[25px] 
+    font-bold
+    font-Jakata; 
+
+  }
+
+  .logo-font{
+    @apply size-[40px]
+    text-[25px]
+    font-bold
+    font-Jakata
+  }
+
+  .feature-card-text-2{
+    @apply
+     text-themeColor3
+     font-normal
+     text-[14px]
+  }
+
+  .feature-card-text-1{
+    @apply
+    font-inter
+    font-bold 
+    text-[24px]
+
+  }
+
