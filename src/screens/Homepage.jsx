@@ -12,7 +12,7 @@ function Homepage() {
       fCardLowerText: "Create user groups, assign tasks and manage permissions"
     },
     {
-      fCardImage: "./src/assets/images/featureSection/feature2.png",
+      fCardImage: "../src/assets/images/featureSection/feature2.png",
       fCardUpperText: "Scheduling",
       fCardLowerText: "Scheduling recurring tasks set reminders and due dates."
     },
