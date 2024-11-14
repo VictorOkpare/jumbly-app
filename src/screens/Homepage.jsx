@@ -3,6 +3,7 @@ import {FaAngleUp, FaAngleDown, FaRegStar } from "react-icons/fa6";
 import { GoThumbsup } from "react-icons/go";
 import Navbar from "../components/Navbar"
 import Footer from '../components/Footer';
+import HeroImage from "../assets/images/image.png"
 
 function Homepage() {
   const featureCardsData = [
@@ -85,7 +86,7 @@ function Homepage() {
       <div className='pt-10 flex flex-col-reverse lg:flex-row bg-themeBg1 pb-16'>
   <div className='lg:w-1/2 w-full flex justify-center lg:justify-end'>
     <div className='w-[300px] h-[240px] lg:w-[400px] lg:h-[320px] lg:mr-14 mb-8 lg:mb-0'>
-      <img src="./src/assets/images/image.png" alt="" className='w-full h-full rounded-tl-[40px] rounded-br-[40px] lg:rounded-tl-[80px] lg:rounded-br-[80px]' />
+      <img src={HeroImage} alt="" className='w-full h-full rounded-tl-[40px] rounded-br-[40px] lg:rounded-tl-[80px] lg:rounded-br-[80px]' />
     </div>
   </div>
   <div className='lg:w-1/2 w-full flex justify-center lg:justify-start'>
