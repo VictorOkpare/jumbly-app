@@ -3,9 +3,9 @@ import React from 'react'
 function Footer() {
   return (
     <div className=' bg-[rgba(217,217,217,1)]'>
-       <div className='w-[600px] h-[90px] flex-col m-auto justify-self-center border-2  '>
+       <div className='md:w-[600px] w-[300px] md:h-[90px] h-[45px] flex-col m-auto justify-self-center pt-2 font-semibold  '>
         <div className='mb-3'>
-            <ul className='flex  gap-5 justify-self-center mt-3 text-xl  '>
+            <ul className='flex  gap-5 justify-self-center mt-3 lg:text-xl  '>
                 <li>Overview</li>
                 <li>Features</li>
                 <li>Pricing</li>
@@ -13,7 +13,7 @@ function Footer() {
             </ul>
         </div>
         <div>
-            <ul className='flex gap-5 justify-self-center text-xl'>
+            <ul className='flex gap-4 justify-self-center lg:text-xl text-sm '>
                 <li>Help</li>
                 <li>Status</li>
                 <li>Terms of services</li>
@@ -21,7 +21,7 @@ function Footer() {
             </ul>
         </div>
         </div>
-        <div className='justify-self-center text-xl text-themeColor3'>2024 Jumbly Solutions. All rights reserve</div>
+        <div className='justify-self-center lg:text-xl mt-10 md:mt-5 text-themeColor3'>2024 Jumbly Solutions. All rights reserve</div>
     </div>
   )
 }
