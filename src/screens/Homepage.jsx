@@ -4,11 +4,12 @@ import { GoThumbsup } from "react-icons/go";
 import Navbar from "../components/Navbar"
 import Footer from '../components/Footer';
 import HeroImage from "../assets/images/image.png"
+import feature1 from "../assets/images/featureSection/feature1.png"
 
 function Homepage() {
   const featureCardsData = [
     {
-      fCardImage: "/assets/images/featureSection/feature1.png",
+      fCardImage: "feature1",
       fCardUpperText: "User & task management",
       fCardLowerText: "Create user groups, assign tasks and manage permissions"
     },
