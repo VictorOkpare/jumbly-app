@@ -7,7 +7,7 @@ import Footer from '../components/Footer';
 function Homepage() {
   const featureCardsData = [
     {
-      fCardImage: "./src/assets/images/featureSection/feature1.png",
+      fCardImage: "/assets/images/featureSection/feature1.png",
       fCardUpperText: "User & task management",
       fCardLowerText: "Create user groups, assign tasks and manage permissions"
     },
