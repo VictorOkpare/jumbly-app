@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { FaCheck, FaAngleUp, FaAngleDown } from "react-icons/fa6";
-import { GoDotFill } from "react-icons/go";
+import { FaAngleUp, FaAngleDown, FaRegStar } from "react-icons/fa6";
+import { GoThumbsup } from "react-icons/go";
 import Navbar from "../components/Navbar"
 
 function Homepage() {
@@ -59,6 +59,24 @@ function Homepage() {
     setOpenFaqIndex(openFaqIndex === index ? null : index);
   };
 
+  const rating = 4; // Adjust this value to test different ratings
+
+  const renderStars = (rating) => {
+    const fullStars = Math.floor(rating);
+    const halfStar = rating % 1 >= 0.5;
+    const emptyStars = 5 - fullStars - (halfStar ? 1 : 0);
+    return (
+      <>
+        {[...Array(fullStars)].map((_, i) => (
+          <FaRegStar key={`full-${i}`} className="text-themeColor2" />
+        ))}
+        {halfStar && <FaRegStar className="text-themeColor2 opacity-50" />}
+        {[...Array(emptyStars)].map((_, i) => (
+          <FaRegStar key={`empty-${i}`} className="text-themeColor3" />
+        ))}
+      </>
+    );
+  };
   return (
     <div>
       <Navbar/>
@@ -202,9 +220,74 @@ function Homepage() {
       </div>
 
       {/* Testimonial Section */}
-      <div>
-        <div><p>Hear What Our Clients Say</p></div>
-        <div></div>
+      <div className='px-20 py-5'>
+        <div><p className='font-bold text-2xl mb-5'>Hear What Our Clients Say</p></div>
+        <div>
+          <div className='mb-5'>
+            <div className='flex h-[150px] items-center text-xl  font-bold mb-2'>
+              <div className='w-[150px] h-[150px]'>
+              <img src="./src/assets/images/testimonialSection/testimonial.png" alt="" />
+              </div>
+              <div className='pl-3'>
+                <p>Rob Dean</p>
+                <p>Oct 2, 2024</p>
+              </div>
+            </div>
+          <div className=' flex flex-col gap-1'>
+          <div className='flex text-2xl'>
+              {renderStars(rating)}
+            </div>
+            <p className='font-bold'>Great Service, the team was efficient</p>
+            <p className='flex items-center gap-1'><GoThumbsup className='text-themeColor3'/><span>5</span></p>
+            </div>
+
+            
+          </div>
+
+          <div className='mb-5'>
+            <div className='flex h-[150px] items-center text-xl  font-bold mb-2'>
+              <div className='w-[150px] h-[150px]'>
+              <img src="./src/assets/images/testimonialSection/testimonial2.png" alt="" />
+              </div>
+              <div className='pl-3'>
+                <p>Rob Dean</p>
+                <p>Oct 2, 2024</p>
+              </div>
+            </div>
+          <div className=' flex flex-col gap-1'>
+          <div className='flex text-2xl'>
+              {renderStars(rating)}
+            </div>
+            <p className='font-bold'>Great Service, the team was efficient</p>
+            <p className='flex items-center gap-1'><GoThumbsup className='text-themeColor3'/><span>5</span></p>
+            </div>
+          
+            
+          </div>
+
+          <div className='mb-5'>
+            <div className='flex h-[150px] items-center text-xl  font-bold mb-2'>
+              <div className='w-[150px] h-[150px]'>
+              <img src="./src/assets/images/testimonialSection/testimonial3.png" alt="" />
+              </div>
+              <div className='pl-3'>
+                <p>Rob Dean</p>
+                <p>Oct 2, 2024</p>
+              </div>
+            </div>
+          <div className=' flex flex-col gap-1'>
+          <div className='flex text-2xl'>
+              {renderStars(rating)}
+            </div>
+            <p className='font-bold'>Great Service, the team was efficient</p>
+            <p className='flex items-center gap-1'><GoThumbsup className='text-themeColor3'/><span>5</span></p>
+            </div>
+
+            
+          </div>
+        </div>
+
+        
       </div>
 
       {/* Sign-up Section */}
