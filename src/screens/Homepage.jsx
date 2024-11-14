@@ -5,40 +5,50 @@ import Navbar from "../components/Navbar"
 import Footer from '../components/Footer';
 import HeroImage from "../assets/images/image.png"
 import feature1 from "../assets/images/featureSection/feature1.png"
+import feature2 from "../assets/images/featureSection/feature2.png"
+import feature3 from "../assets/images/featureSection/feature3.png"
+import feature4 from "../assets/images/featureSection/feature4.png"
+import feature5 from "../assets/images/featureSection/feature5.png"
+import about1 from "../assets/images/aboutSection/about1.png"
+import about2 from "../assets/images/aboutSection/about2.png"
+import about3 from "../assets/images/aboutSection/about3.png"
+import testimonial from "../assets/images/testimonialSection/testimonial.png"
+import testimonial2 from "../assets/images/testimonialSection/testimonial2.png"
+import testimonial3 from "../assets/images/testimonialSection/testimonial3.png"
 
 function Homepage() {
   const featureCardsData = [
     {
-      fCardImage: "feature1",
+      fCardImage: feature1,
       fCardUpperText: "User & task management",
       fCardLowerText: "Create user groups, assign tasks and manage permissions"
     },
     {
-      fCardImage: "../src/assets/images/featureSection/feature2.png",
+      fCardImage: feature2,
       fCardUpperText: "Scheduling",
       fCardLowerText: "Scheduling recurring tasks set reminders and due dates."
     },
     {
-      fCardImage: "./src/assets/images/featureSection/feature3.png",
+      fCardImage: feature3,
       fCardUpperText: "Reporting & analytics",
       fCardLowerText: "Generate reports, track performance and identity trends"
     },
     {
-      fCardImage: "./src/assets/images/featureSection/feature4.png",
+      fCardImage: feature4,
       fCardUpperText: "Issue reporting",
       fCardLowerText: "Report issues, attach photos and assign tasks"
     },
     {
-      fCardImage: "./src/assets/images/featureSection/feature5.png",
+      fCardImage: feature5,
       fCardUpperText: "Notifications",
       fCardLowerText: "Receive instant notifications, view task updates and more"
     },
   ];
 
   const aboutCardData = [
-    { aCardImage: "./src/assets/images/aboutSection/about1.png", aCardText: "Home Cleaning" },
-    { aCardImage: "./src/assets/images/aboutSection/about2.png", aCardText: "Office Cleaning" },
-    { aCardImage: "./src/assets/images/aboutSection/about3.png", aCardText: "Medical Cleaning" },
+    { aCardImage: about1, aCardText: "Home Cleaning" },
+    { aCardImage: about2, aCardText: "Office Cleaning" },
+    { aCardImage: about3, aCardText: "Medical Cleaning" },
   ];
 
   const faqData = [
@@ -233,7 +243,7 @@ function Homepage() {
           <div className='mb-5'>
             <div className='flex h-[150px] items-center text-xl  font-bold mb-2'>
               <div className='w-[150px] h-[150px]'>
-              <img src="./src/assets/images/testimonialSection/testimonial.png" alt="" />
+              <img src={testimonial} alt="" />
               </div>
               <div className='pl-3'>
                 <p>Rob Dean</p>
@@ -254,7 +264,7 @@ function Homepage() {
           <div className='mb-5'>
             <div className='flex h-[150px] items-center text-xl  font-bold mb-2'>
               <div className='w-[150px] h-[150px]'>
-              <img src="./src/assets/images/testimonialSection/testimonial2.png" alt="" />
+              <img src={testimonial2} alt="" />
               </div>
               <div className='pl-3'>
                 <p>Rob Dean</p>
@@ -275,7 +285,7 @@ function Homepage() {
           <div className='mb-5'>
             <div className='flex h-[150px] items-center text-xl  font-bold mb-2'>
               <div className='w-[150px] h-[150px]'>
-              <img src="./src/assets/images/testimonialSection/testimonial3.png" alt="" />
+              <img src={testimonial3} alt="" />
               </div>
               <div className='pl-3'>
                 <p>Rob Dean</p>
