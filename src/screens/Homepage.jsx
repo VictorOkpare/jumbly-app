@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { FaAngleUp, FaAngleDown, FaRegStar } from "react-icons/fa6";
 import { GoThumbsup } from "react-icons/go";
 import Navbar from "../components/Navbar"
+import Footer from '../components/Footer';
 
 function Homepage() {
   const featureCardsData = [
@@ -297,6 +298,7 @@ function Homepage() {
           <button className=' bg-themeColor2 text-white p-2 rounded-2xl flex justify-self-center '>Sign up for free today!</button>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 }

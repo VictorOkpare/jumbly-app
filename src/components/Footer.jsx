@@ -3,7 +3,7 @@ import React from 'react'
 function Footer() {
   return (
     <div className=' bg-[rgba(217,217,217,1)]'>
-       <div className='w-[600px] h-[90px] flex-col m-auto justify-self-center border-2 border- '>
+       <div className='w-[600px] h-[90px] flex-col m-auto justify-self-center border-2  '>
         <div className='mb-3'>
             <ul className='flex  gap-5 justify-self-center mt-3 text-xl  '>
                 <li>Overview</li>
