@@ -1,3 +1,7 @@
+// pls read the readme file to understand how 
+// data is collected for the pricing card and Faqs, feedback and rating
+
+
 import React, { useState } from 'react';
 import axios from 'axios';
 
