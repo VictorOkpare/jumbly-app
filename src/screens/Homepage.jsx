@@ -1,8 +1,16 @@
 import React, { useState } from 'react';
+import axios from 'axios';
+
+
+// React icons import
 import {FaAngleUp, FaAngleDown, FaRegStar } from "react-icons/fa6";
 import { GoThumbsup } from "react-icons/go";
+
+// Component import
 import Navbar from "../components/Navbar"
 import Footer from '../components/Footer';
+
+// image import
 import HeroImage from "../assets/images/image.png"
 import feature1 from "../assets/images/featureSection/feature1.png"
 import feature2 from "../assets/images/featureSection/feature2.png"
@@ -15,6 +23,11 @@ import about3 from "../assets/images/aboutSection/about3.png"
 import testimonial from "../assets/images/testimonialSection/testimonial.png"
 import testimonial2 from "../assets/images/testimonialSection/testimonial2.png"
 import testimonial3 from "../assets/images/testimonialSection/testimonial3.png"
+
+
+// data imports
+
+import pricingData from '../assets/data/pricingData.json';
 
 function Homepage() {
   const featureCardsData = [
@@ -72,7 +85,7 @@ function Homepage() {
     setOpenFaqIndex(openFaqIndex === index ? null : index);
   };
 
-  const rating = 4; // Adjust this value to test different ratings for different feedbacks by users
+  const rating = 4; // Adjust this value to get different ratings for different feedbacks by users
 
   const renderStars = (rating) => {
     const fullStars = Math.floor(rating);
@@ -90,6 +103,18 @@ function Homepage() {
       </>
     );
   };
+
+  
+
+  function PricingCard() {
+    const [pricingData, setPricingData] = useState([]);
+  
+    useEffect(() => {
+      axios.get('/assets/pricingData.json')
+        .then((response) => setPricingData(response.data))
+        .catch((error) => console.error('Error fetching pricing data:', error));
+    }, []);
+  }
   return (
     <div>
       <Navbar/>
@@ -102,7 +127,7 @@ function Homepage() {
   </div>
   <div className='lg:w-1/2 w-full flex justify-center lg:justify-start'>
     <div className='w-4/5 lg:w-full h-auto lg:h-[320px] flex flex-col justify-between items-center lg:items-start text-center lg:text-left'>
-      <p className='font-bold text-3xl lg:text-5xl mb-4 lg:mb-0'>Facility Management <br /> software for the<br /> modern world</p>
+      <p className='font-bold text-3xl lg:text-5xl mb-4 lg:mb-0 '>Facility Management <br /> software for the<br /> modern world</p>
       <p className='text-[14px] lg:text-[16px] font-semibold text-themeColor3 mb-6 lg:mb-0'>
         Manage tasks, Schedule, and more with Jumbly, Streamline your facility operations with our powerful, easy-to-use platform.
       </p>
@@ -115,7 +140,7 @@ function Homepage() {
 
 
       {/* Features Section */}
-      <div className='bg-themeBg2'>
+      <div className='bg-themeBg2 '>
         <div className='md:mx-20 mx-10'>
           <div>
             <p className='font-bold text-[24px] '>Features</p>
@@ -157,62 +182,38 @@ function Homepage() {
             <div className='pb-8 font-bold text-[24px]'>Pricing Packages</div>
             {/* Pricing Card */}
             <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5'>
-  {/* Basic package */}
-  <div className='border-themeColor3 border-2 rounded-lg w-full max-w-[320px] h-auto md:h-[280px] px-4 py-2 bg-white'>
-    <div>
-      <p className='bg-themeColor3 text-white w-3/4 sm:w-[150px] text-center rounded-xl text-xs sm:text-sm md:text-base lg:text-lg mx-auto'>Most Affordable</p>
-      <p className='font-extrabold text-lg sm:text-xl md:text-2xl mt-[-10px] md:mt-[-22px] mb-2'>Basic</p>
-      <p className='font-extrabold text-3xl sm:text-4xl'>$25<span className='text-[12px] sm:text-[16px]'>/ month</span></p>
-      <p className='bg-themeColor2 text-white text-center w-3/4 sm:w-[230px] rounded-xl py-1 text-sm sm:text-base md:text-lg mx-auto'>Choose Basic</p>
+      {pricingData.map((pkg, index) => (
+        <div
+          key={index}
+          className='border-themeColor3 border-2 rounded-lg w-full max-w-[320px] h-auto md:h-[280px] px-4 py-2 bg-white'
+        >
+          <div>
+            <p className={`bg-${pkg.badge === 'Most Affordable' ? 'themeColor3' : pkg.badge === 'Best Seller' ? '[rgba(229,109,93,1)]' : '[rgba(245,240,229,1)]'} text-white w-3/4 sm:w-[150px] text-center rounded-xl text-xs sm:text-sm md:text-base lg:text-lg mx-auto`}>
+              {pkg.badge}
+            </p>
+            <p className='font-extrabold text-lg sm:text-xl md:text-2xl mt-[-10px] md:mt-[-22px] mb-2'>
+              {pkg.packageName}
+            </p>
+            <p className='font-extrabold text-3xl sm:text-4xl'>
+              ${pkg.price}
+              <span className='text-[12px] sm:text-[16px]'>/ {pkg.frequency}</span>
+            </p>
+            <p className='bg-themeColor2 text-white text-center w-3/4 sm:w-[230px] rounded-xl py-1 text-sm sm:text-base md:text-lg mx-auto'>
+              Choose {pkg.packageName}
+            </p>
+          </div>
+          <div className='mt-2 md:mt-3'>
+            <ul className='font-bold text-xs sm:text-sm md:text-[14px]'>
+              {pkg.features.map((feature, idx) => (
+                <li key={idx} className="before:content-['•'] before:text-black before:mr-2">
+                  {feature}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      ))}
     </div>
-    <div className='mt-2 md:mt-3'>
-      <ul className='font-bold text-xs sm:text-sm md:text-[14px]'>
-        <li className="before:content-['•'] before:text-black before:mr-2">Company Registration</li>
-        <li className="before:content-['•'] before:text-black before:mr-2">Basic Scheduling</li>
-        <li className="before:content-['•'] before:text-black before:mr-2">Client Management (up to 30 clients)</li>
-        <li className="before:content-['•'] before:text-black before:mr-2">Email support</li>
-      </ul>
-    </div>
-  </div>
-
-  {/* Pro package */}
-  <div className='border-themeColor3 border-2 rounded-lg w-full max-w-[320px] h-auto md:h-[280px] px-4 py-2 bg-white'>
-    <div>
-      <p className='bg-[rgba(245,240,229,1)] w-3/4 sm:w-[150px] text-center rounded-xl text-xs sm:text-sm md:text-base lg:text-lg mx-auto'>Recommended</p>
-      <p className='font-extrabold text-lg sm:text-xl md:text-2xl mt-[-10px] md:mt-[-22px] mb-2'>Pro</p>
-      <p className='font-extrabold text-3xl sm:text-4xl'>$55<span className='text-[12px] sm:text-[16px]'>/ month</span></p>
-      <p className='bg-themeColor2 text-white text-center w-3/4 sm:w-[230px] rounded-xl py-1 text-sm sm:text-base md:text-lg mx-auto'>Choose Pro</p>
-    </div>
-    <div className='mt-2 md:mt-3'>
-      <ul className='font-bold text-xs sm:text-sm md:text-[14px]'>
-        <li className="before:content-['•'] before:text-black before:mr-2">All basic features</li>
-        <li className="before:content-['•'] before:text-black before:mr-2">Advanced Scheduling</li>
-        <li className="before:content-['•'] before:text-black before:mr-2">Invoicing & payment processing</li>
-        <li className="before:content-['•'] before:text-black before:mr-2">Performance</li>
-        <li className="before:content-['•'] before:text-black before:mr-2">Priority support</li>
-      </ul>
-    </div>
-  </div>
-
-  {/* Premium package */}
-  <div className='border-themeColor3 border-2 rounded-lg w-full max-w-[320px] h-auto md:h-[280px] px-4 py-2 bg-white'>
-    <div>
-      <p className='bg-[rgba(229,109,93,1)] text-white w-3/4 sm:w-[150px] text-center rounded-xl text-xs sm:text-sm md:text-base lg:text-lg mx-auto'>Best Seller</p>
-      <p className='font-extrabold text-lg sm:text-xl md:text-2xl mt-[-10px] md:mt-[-22px] mb-2'>Premium</p>
-      <p className='font-extrabold text-3xl sm:text-4xl'>$99<span className='text-[12px] sm:text-[16px]'>/ month</span></p>
-      <p className='bg-themeColor2 text-white text-center w-3/4 sm:w-[230px] rounded-xl py-1 text-sm sm:text-base md:text-lg mx-auto'>Choose Premium</p>
-    </div>
-    <div className='mt-2 md:mt-3'>
-      <ul className='font-bold text-xs sm:text-sm md:text-[14px]'>
-        <li className="before:content-['•'] before:text-black before:mr-2">All basic features</li>
-        <li className="before:content-['•'] before:text-black before:mr-2">Advanced Scheduling</li>
-        <li className="before:content-['•'] before:text-black before:mr-2">Invoicing & payment processing</li>
-        <li className="before:content-['•'] before:text-black before:mr-2">Performance</li>
-        <li className="before:content-['•'] before:text-black before:mr-2">Priority support</li>
-      </ul>
-    </div>
-  </div>
-</div>
 
 
           </div>

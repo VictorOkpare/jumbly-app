@@ -1,0 +1,28 @@
+[
+    {
+      "fCardImage": "feature1",
+      "fCardUpperText": "User & task management",
+      "fCardLowerText": "Create user groups, assign tasks and manage permissions"
+    },
+    {
+      "fCardImage": "feature2",
+      "fCardUpperText": "Scheduling",
+      "fCardLowerText": "Scheduling recurring tasks set reminders and due dates."
+    },
+    {
+      "fCardImage": "feature3",
+      "fCardUpperText": "Reporting & analytics",
+      "fCardLowerText": "Generate reports, track performance and identity trends"
+    },
+    {
+      "fCardImage": "feature4",
+      "fCardUpperText": "Issue reporting",
+      "fCardLowerText": "Report issues, attach photos and assign tasks"
+    },
+    {
+      "fCardImage": "feature5",
+      "fCardUpperText": "Notifications",
+      "fCardLowerText": "Receive instant notifications, view task updates and more"
+    }
+  ]
+  

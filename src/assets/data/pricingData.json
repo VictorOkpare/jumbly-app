@@ -1,0 +1,42 @@
+[
+    {
+      "packageName": "Basic",
+      "price": 25,
+      "frequency": "month",
+      "features": [
+        "Company Registration",
+        "Basic Scheduling",
+        "Client Management (up to 30 clients)",
+        "Email support"
+      ],
+      "badge": "Most Affordable"
+    },
+    {
+      "packageName": "Pro",
+      "price": 55,
+      "frequency": "month",
+      "features": [
+        "All pro features",
+        "Advanced Scheduling",
+        "Invoicing & payment processing",
+        "Performance",
+        "Priority support"
+      ],
+      "badge": "Recommended"
+    },
+    {
+      "packageName": "Premium",
+      "price": 99,
+      "frequency": "month",
+      "features": [
+        "All premium features",
+        "Advanced Scheduling",
+        "Invoicing & payment processing",
+        "Performance",
+        "Priority support",
+        "Custom integrations"
+      ],
+      "badge": "Best Seller"
+    }
+  ]
+  

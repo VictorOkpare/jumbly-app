@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -8,16 +9,16 @@ function Navbar() {
       <nav className='p-5 flex justify-between items-center ml-9 mr-9'>
         <div className='flex items-center'>
           <img src="" alt="Logo" />
-          <p className='logo-font text-xl ml-2'><a href='#'>Jumbly</a></p>
+          <p className='logo-font text-xl ml-2'><Link to='#'>Jumbly</Link></p>
         </div>
 
         {/* Desktop Links */}
         <div className='hidden lg:flex w-1/2 items-center gap-16'>
           <ul className='nav-list flex gap-16'>
-            <li><a href='#'>Overview</a></li>
-            <li><a href='#'>Features</a></li>
-            <li><a href='#'>Pricing</a></li>
-            <li><a href='#'>Docs</a></li>
+            <li><Link to='#'>Overview</Link></li>
+            <li><Link to='#'>Features</Link></li>
+            <li><Link to='#'>Pricing</Link></li>
+            <li><Link to='#'>Docs</Link></li>
           </ul>
           <div className='flex'>
             <button className="mr-4 bg-themeColor2 base-button text-white">Sign up</button>
@@ -48,10 +49,10 @@ function Navbar() {
             </button>
             
             <ul className=' font-bold flex flex-col gap-4 items-center mt-8'>
-              <li><a href='#'>Overview</a></li>
-              <li><a href='#'>Features</a></li>
-              <li><a href='#'>Pricing</a></li>
-              <li><a href='#'>Docs</a></li>
+              <li><Link to="#">Overview</Link></li>
+              <li><Link to='#'>Features</Link></li>
+              <li><Link href='#'>Pricing</Link></li>
+              <li><Link href='#'>Docs</Link></li>
             </ul>
             <div className='flex flex-col mt-4 items-center'>
               <button className="mb-2 w-full bg-themeColor2 text-white base-button">Sign up</button>
